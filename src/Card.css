@@ -1,0 +1,30 @@
+.card {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.card-level-number-and-name {
+  margin: 40% 0 0 0;
+  text-align: center;
+}
+
+.card-level-number {
+  display: block;
+  line-height: 1;
+  font-size: 5em;
+}
+
+.card-level-name {
+  display: block;
+  font-size: 1.5em;
+}
+
+.card-level-description {
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+  font-weight: normal;
+}

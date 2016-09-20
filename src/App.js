@@ -1,27 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Level from './Level';
+import Card from './Card';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { selectedLevel: null };
+    this.handleSelection = this.handleSelection.bind(this);
+  }
+
+  handleSelection(level) {
+    this.setState({ selectedLevel: level });
+  }
+
   render() {
     return (
       <div className="app">
         <header className="header">
           <h1 className="title">Delegation Poker</h1>
         </header>
-        <ol className="levels">
-          {this.props.levels.map((props, index) =>
-            <Level
-              key={props.name}
-              level={index + 1}
-              {...props}
-            />
-          )}
-        </ol>
+        {this.state.selectedLevel == null &&
+          <ol className="levels">
+            {this.props.levels.map((props, index) =>
+              <Level
+                {...props}
+                key={props.name}
+                level={index + 1}
+                onClick={this.handleSelection}
+              />
+            )}
+          </ol>
+        }
+        {this.state.selectedLevel &&
+          <Card
+            {...this.state.selectedLevel}
+            onClick={() => this.handleSelection(null)}
+          />
+        }
       </div>
     );
   }
 }
+
+App.propTypes = {
+  levels: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 App.defaultProps = {
   levels: [

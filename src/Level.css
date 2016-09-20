@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   padding: 5px 10px;
-  color: rgb(50, 50, 50);
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -12,34 +11,6 @@
   counter-increment: levels;
   content: counter(levels) ".";
   margin-right: 0.2em;
-}
-
-.level-1 {
-  background-color: rgb(255, 215, 220);
-}
-
-.level-2 {
-  background-color: rgb(254, 228, 209);
-}
-
-.level-3 {
-  background-color: rgb(245, 243, 206);
-}
-
-.level-4 {
-  background-color: rgb(231, 253, 211);
-}
-
-.level-5 {
-  background-color: rgb(211, 253, 231);
-}
-
-.level-6 {
-  background-color: rgb(206, 243, 245);
-}
-
-.level-7 {
-  background-color: rgb(209, 229, 254);
 }
 
 .level-name {
