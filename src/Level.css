@@ -33,3 +33,21 @@
   font-size: 0.8rem;
   font-weight: normal;
 }
+
+@media (min-width: 480px) {
+  .level-description {
+    flex: 5;
+  }
+}
+
+@media (min-width: 560px) {
+  .level-description {
+    flex: 7;
+  }
+}
+
+@media (max-height: 320px) {
+  .level {
+    font-size: 1rem;
+  }
+}

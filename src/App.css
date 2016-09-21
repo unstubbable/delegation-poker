@@ -38,3 +38,9 @@
   padding: 0;
   font-size: large;
 }
+
+@media (max-height: 320px) {
+  .header {
+    font-size: 1.2em;
+  }
+}

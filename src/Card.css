@@ -55,3 +55,13 @@
   font-size: 1rem;
   font-weight: normal;
 }
+
+@media (max-height: 320px) and (min-width: 480px) {
+  .card {
+    justify-content: space-around;
+  }
+
+  .card-level-number-and-name {
+    margin: 0;
+  }
+}
