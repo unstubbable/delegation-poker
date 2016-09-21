@@ -35,7 +35,12 @@
 }
 
 .card-level-number-and-name {
-  margin: 40% 0 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 0;
   text-align: center;
 }
 
@@ -54,14 +59,4 @@
   margin: 0 0 20px 0;
   font-size: 1rem;
   font-weight: normal;
-}
-
-@media (max-height: 320px) and (min-width: 480px) {
-  .card {
-    justify-content: space-around;
-  }
-
-  .card-level-number-and-name {
-    margin: 0;
-  }
 }
