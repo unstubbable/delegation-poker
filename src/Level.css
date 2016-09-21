@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding: 5px 10px;
+  font-family: -apple-system-headline, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
