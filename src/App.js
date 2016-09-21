@@ -15,7 +15,12 @@ class App extends Component {
 
   componentWillMount() {
     if (window.navigator.standalone) {
+      // In standalone mode (added to home screen) we still need
+      // FastClick to avoid the good old 300ms tap delay.
       this.fastClick = new FastClick(document.body);
+    } else {
+      // Allow :active styles to work in mobile browsers.
+      document.addEventListener('touchstart', function(){}, true);
     }
   }
 
