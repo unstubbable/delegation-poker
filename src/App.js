@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
+import FastClick from 'fastclick';
 import Level from './Level';
 import Card from './Card';
 import './App.css';
@@ -10,6 +11,18 @@ class App extends Component {
     super();
     this.state = { selectedLevel: null };
     this.handleSelection = this.handleSelection.bind(this);
+  }
+
+  componentWillMount() {
+    if (window.navigator.standalone) {
+      this.fastClick = new FastClick(document.body);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.fastClick) {
+      this.fastClick.destroy();
+    }
   }
 
   handleSelection(level) {
