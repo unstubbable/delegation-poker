@@ -10,21 +10,24 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(50, 50, 50);
-  padding: 0 10px;
-  text-align: center;
-}
-
-.title {
-  color: white;
+  z-index: 1;
   margin: 0;
+  padding: 0 10px;
+  color: white;
+  background-color: rgb(50, 50, 50);
+  text-align: center;
   font-size: 1.5em;
 }
 
-.levels {
+.content {
   flex: 10;
+  position: relative;
+}
+
+.levels {
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-size: large;

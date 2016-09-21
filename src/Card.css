@@ -1,11 +1,37 @@
 .card {
-  flex: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   cursor: pointer;
+}
+
+.card-enter {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.card-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-leave {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.card-leave-active {
+  opacity: 0;
+  transform: scale(0);
+  transition: all .15s ease-out;
 }
 
 .card-level-number-and-name {

@@ -6,6 +6,13 @@
   font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
+  user-select: none;
+  transition: transform .15s ease-out;
+}
+
+.level:active {
+  transition: transform .15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.08);
 }
 
 .level:before {

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Level from './Level';
 import Card from './Card';
 import './App.css';
@@ -17,10 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="header">
-          <h1 className="title">Delegation Poker</h1>
-        </header>
-        {this.state.selectedLevel == null &&
+        <h1 className="header">Delegation Poker</h1>
+        <div className="content">
           <ol className="levels">
             {this.props.levels.map((props, index) =>
               <Level
@@ -31,13 +30,21 @@ class App extends Component {
               />
             )}
           </ol>
-        }
-        {this.state.selectedLevel &&
-          <Card
-            {...this.state.selectedLevel}
-            onClick={() => this.handleSelection(null)}
-          />
-        }
+          <ReactCSSTransitionGroup
+            transitionName="card"
+            transitionEnterTimeout={200}
+            transitionLeaveTimeout={150}
+            component="div"
+          >
+            {this.state.selectedLevel &&
+              <Card
+                key="card"
+                {...this.state.selectedLevel}
+                onClick={() => this.handleSelection(null)}
+              />
+            }
+          </ReactCSSTransitionGroup>
+        </div>
       </div>
     );
   }
