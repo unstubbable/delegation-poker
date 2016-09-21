@@ -1,6 +1,7 @@
 {
   "name": "delegation-poker",
   "version": "0.1.0",
+  "homepage": "http://hendrik-liebau.de/delegation-poker",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.4.3"
