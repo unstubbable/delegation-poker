@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import classnames from 'classnames';
 import Level from './Level';
 import Card from './Card';
 import './App.css';
@@ -16,8 +17,12 @@ class App extends Component {
   }
 
   render() {
+    const className = classnames('app', {
+      'app-standalone': window.navigator.standalone
+    });
+
     return (
-      <div className="app">
+      <div className={className}>
         <h1 className="header">Delegation Poker</h1>
         <div className="content">
           <ol className="levels">

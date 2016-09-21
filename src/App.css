@@ -23,6 +23,10 @@
   font-size: 1.5em;
 }
 
+.app-standalone .header {
+  padding-top: 15px;
+}
+
 .content {
   flex: 10;
   display: flex;
