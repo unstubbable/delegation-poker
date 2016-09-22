@@ -1,19 +1,20 @@
-var FtpDeploy = require('ftp-deploy');
-var ftpDeploy = new FtpDeploy();
+import FtpDeploy from 'ftp-deploy';
 
-var config = {
+const config = {
   username: '24909f13699',
   host: 'hendrik-liebau.de',
   port: 21,
-  localRoot: __dirname + '/../build',
+  localRoot: `${__dirname}/../build`,
   remoteRoot: '/htdocs/hendrik-liebau/delegation-poker/',
 };
 
-ftpDeploy.on('uploaded', function(data) {
-  console.log('File ' + data.transferredFileCount + '/' + data.totalFileCount + ': ' + data.filename);
+const ftpDeploy = new FtpDeploy();
+
+ftpDeploy.on('uploaded', (data) => {
+  console.log(`File ${data.transferredFileCount}/${data.totalFileCount}: ${data.filename}`);
 });
 
-ftpDeploy.deploy(config, function(err) {
+ftpDeploy.deploy(config, (err) => {
   if (err) {
     console.log(err);
   } else {
