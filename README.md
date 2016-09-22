@@ -6,7 +6,7 @@ A web app that can be used for [delegation poker][] in [delegation board][] work
 How to use
 ----------
 
-1. Visit [http://hendrik-liebau.de/delegation-poker]() on your smartphone.
+1. Visit http://hendrik-liebau.de/delegation-poker on your smartphone.
 2. You can optionally add the app to your home screen for quick access and full screen awesomeness.
 
 ---
