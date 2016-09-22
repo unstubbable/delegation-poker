@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
-import FastClick from 'fastclick';
 import Level from './Level';
 import Card from './Card';
 import './App.css';
@@ -13,30 +12,13 @@ class App extends Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  componentWillMount() {
-    if (window.navigator.standalone) {
-      // In standalone mode (added to home screen) we still need
-      // FastClick to avoid the good old 300ms tap delay.
-      this.fastClick = new FastClick(document.body);
-    } else {
-      // Allow :active styles to work in mobile browsers.
-      document.addEventListener('touchstart', function(){}, true);
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.fastClick) {
-      this.fastClick.destroy();
-    }
-  }
-
   handleSelection(level) {
     this.setState({ selectedLevel: level });
   }
 
   render() {
     const className = classnames('app', {
-      'app-standalone': window.navigator.standalone
+      'app-standalone': typeof navigator !== 'undefined' && navigator.standalone
     });
 
     return (
