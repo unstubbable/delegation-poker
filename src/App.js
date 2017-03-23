@@ -82,10 +82,10 @@ class App extends Component {
         <h1 className="header">Delegation Poker</h1>
         <div className="content">
           <ol className="levels">
-            {this.props.levels.map(props => (
+            {this.props.levels.map(level => (
               <LevelItem
-                {...props}
-                key={props.name}
+                {...level}
+                key={level.name}
                 onClick={this.handleSelection}
               />
             ))}
