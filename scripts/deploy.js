@@ -1,3 +1,5 @@
+/* @flow */
+
 import FtpDeploy from 'ftp-deploy';
 
 const config = {

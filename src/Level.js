@@ -1,9 +1,16 @@
-import React, { PropTypes } from 'react';
+/* @flow */
+
+import React from 'react';
 import classnames from 'classnames';
+import type { Level } from './App';
 import './colors.css';
 import './Level.css';
 
-const Level = ({level, name, description, onClick}) => {
+export type LevelProps = Level & {
+  onClick: (level: Level) => void;
+}
+
+const LevelItem = ({ level, name, description, onClick }: LevelProps) => {
   const className = classnames('level', `level-${level}`);
 
   return (
@@ -14,11 +21,4 @@ const Level = ({level, name, description, onClick}) => {
   );
 };
 
-Level.propTypes = {
-  level: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
-
-export default Level;
+export default LevelItem;

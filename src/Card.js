@@ -1,9 +1,16 @@
-import React, { PropTypes } from 'react';
+/* @flow */
+
+import React from 'react';
 import classnames from 'classnames';
+import type { Level } from './App';
 import './colors.css';
 import './Card.css';
 
-const Card = ({level, name, description, onClick}) => {
+export type CardProps = Level & {
+  onClick: (level: Level) => void;
+}
+
+const Card = ({level, name, description, onClick}: CardProps) => {
   const className = classnames('card', `level-${level}`);
 
   return (
@@ -15,13 +22,6 @@ const Card = ({level, name, description, onClick}) => {
       <p className="card-level-description">{description}</p>
     </div>
   );
-};
-
-Card.propTypes = {
-  level: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default Card;
