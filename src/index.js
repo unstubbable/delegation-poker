@@ -12,10 +12,7 @@ if (navigator.standalone) {
   new FastClick(document.body);
 } else {
   // Allow :active styles to work in mobile browsers.
-  document.addEventListener('touchstart', function(){}, true);
+  document.addEventListener('touchstart', function() {}, true);
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

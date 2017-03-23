@@ -12,11 +12,13 @@ const config = {
 
 const ftpDeploy = new FtpDeploy();
 
-ftpDeploy.on('uploaded', (data) => {
-  console.log(`File ${data.transferredFileCount}/${data.totalFileCount}: ${data.filename}`);
+ftpDeploy.on('uploaded', data => {
+  console.log(
+    `File ${data.transferredFileCount}/${data.totalFileCount}: ${data.filename}`,
+  );
 });
 
-ftpDeploy.deploy(config, (err) => {
+ftpDeploy.deploy(config, err => {
   if (err) {
     console.log(err);
   } else {

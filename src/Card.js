@@ -7,10 +7,10 @@ import './colors.css';
 import './Card.css';
 
 export type CardProps = Level & {
-  onClick: (level: Level) => void;
-}
+  onClick: (level: Level) => void,
+};
 
-const Card = ({level, name, description, onClick}: CardProps) => {
+const Card = ({ level, name, description, onClick }: CardProps) => {
   const className = classnames('card', `level-${level}`);
 
   return (

@@ -7,14 +7,17 @@ import './colors.css';
 import './Level.css';
 
 export type LevelProps = Level & {
-  onClick: (level: Level) => void;
-}
+  onClick: (level: Level) => void,
+};
 
 const LevelItem = ({ level, name, description, onClick }: LevelProps) => {
   const className = classnames('level', `level-${level}`);
 
   return (
-    <li className={className} onClick={() => onClick({level, name, description})}>
+    <li
+      className={className}
+      onClick={() => onClick({ level, name, description })}
+    >
       <h2 className="level-name">{name}</h2>
       <p className="level-description">{description}</p>
     </li>

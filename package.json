@@ -17,6 +17,9 @@
     "babel-preset-react": "^6.23.0",
     "flow-bin": "^0.41.0",
     "ftp-deploy": "^1.1.0",
+    "husky": "^0.13.2",
+    "lint-staged": "^3.4.0",
+    "prettier": "^0.22.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
@@ -27,7 +30,15 @@
     "flow": "flow",
     "prerender": "BABEL_ENV=node babel-node ./scripts/prerender",
     "postbuild": "npm run prerender",
-    "deploy": "BABEL_ENV=node babel-node ./scripts/deploy"
+    "deploy": "BABEL_ENV=node babel-node ./scripts/deploy",
+    "precommit": "lint-staged",
+    "format": "prettier --single-quote --trailing-comma all --parser flow --write '{src,scripts}/**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
   },
   "babel": {
     "env": {

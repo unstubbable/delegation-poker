@@ -11,11 +11,11 @@ export type Level = {
   level: number,
   name: string,
   description: string,
-}
+};
 
 type AppProps = {
-  levels: Level[];
-}
+  levels: Level[],
+};
 
 class App extends Component {
   static defaultProps: AppProps = {
@@ -23,73 +23,72 @@ class App extends Component {
       {
         level: 1,
         name: 'Tell',
-        description: 'Make the decision. You might explain your motivation. No discussion.'
+        description: 'Make the decision. You might explain your motivation. No discussion.',
       },
       {
         level: 2,
         name: 'Sell',
-        description: 'Make the decision. Try to convince others and help them feel involved.'
+        description: 'Make the decision. Try to convince others and help them feel involved.',
       },
       {
         level: 3,
         name: 'Consult',
-        description: 'Ask for input, take input into considaration, then decide.'
+        description: 'Ask for input, take input into considaration, then decide.',
       },
       {
         level: 4,
         name: 'Agree',
-        description: 'Discuss until you reach consensus.'
+        description: 'Discuss until you reach consensus.',
       },
       {
         level: 5,
         name: 'Advise',
-        description: 'Offer input, let others decide.'
+        description: 'Offer input, let others decide.',
       },
       {
         level: 6,
         name: 'Inquire',
-        description: 'Leave decision to others, then ask them to convince/inform you. It’s their decision.'
+        description: 'Leave decision to others, then ask them to convince/inform you. It’s their decision.',
       },
       {
         level: 7,
         name: 'Delegate',
-        description: 'Leave decision completely to others. Don’t want to know anything about it.'
+        description: 'Leave decision completely to others. Don’t want to know anything about it.',
       },
-    ]
+    ],
   };
-
   props: AppProps;
-
   state: {
-    selectedLevel: ?Level;
+    selectedLevel: ?Level,
   };
-
   constructor() {
     super();
-    this.state = { selectedLevel: null };
+    this.state = {
+      selectedLevel: null,
+    };
   }
-
   handleSelection = (level: ?Level) => {
-    this.setState({ selectedLevel: level });
-  }
-
+    this.setState({
+      selectedLevel: level,
+    });
+  };
   render() {
     const className = classnames('app', {
-      'app-standalone': typeof navigator !== 'undefined' && (navigator: any).standalone
+      'app-standalone': typeof navigator !== 'undefined' &&
+        (navigator: any).standalone,
     });
-
     return (
       <div className={className}>
         <h1 className="header">Delegation Poker</h1>
         <div className="content">
           <ol className="levels">
-            {this.props.levels.map((props) =>
+            {this.props.levels.map(props => (
               <LevelItem
                 {...props}
                 key={props.name}
                 onClick={this.handleSelection}
               />
-            )}
+            ))}
           </ol>
           <ReactCSSTransitionGroup
             transitionName="card"
@@ -102,13 +101,11 @@ class App extends Component {
                 key="card"
                 {...this.state.selectedLevel}
                 onClick={() => this.handleSelection(null)}
-              />
-            }
+              />}
           </ReactCSSTransitionGroup>
         </div>
       </div>
     );
   }
 }
-
 export default App;
