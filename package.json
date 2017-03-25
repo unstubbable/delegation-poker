@@ -1,7 +1,7 @@
 {
   "name": "delegation-poker",
   "version": "0.1.0",
-  "homepage": "http://hendrik-liebau.de/delegation-poker",
+  "homepage": "https://kinghenne.github.io/delegation-poker",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
@@ -16,7 +16,7 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "flow-bin": "^0.41.0",
-    "ftp-deploy": "^1.1.0",
+    "gh-pages": "^0.12.0",
     "husky": "^0.13.2",
     "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
@@ -30,7 +30,8 @@
     "flow": "flow",
     "prerender": "BABEL_ENV=production babel-node ./scripts/prerender",
     "postbuild": "npm run prerender",
-    "deploy": "BABEL_ENV=node babel-node ./scripts/deploy",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "precommit": "lint-staged",
     "format": "prettier --single-quote --trailing-comma all --parser flow --write '{src,scripts}/**/*.js'"
   },
