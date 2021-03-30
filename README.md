@@ -9,7 +9,7 @@ A web app that can be used for [delegation poker][] in [delegation board][] work
 How to use
 ----------
 
-1. Visit https://kinghenne.github.io/delegation-poker/ on your smartphone.
+1. Visit https://unstubbable.github.io/delegation-poker/ on your smartphone.
 2. You can optionally add the app to your home screen for quick access and full screen awesomeness.
 
 <img src="https://cloud.githubusercontent.com/assets/761683/18763257/c62b2cf8-810c-11e6-8833-2e3a008848c5.PNG" width="320" />
